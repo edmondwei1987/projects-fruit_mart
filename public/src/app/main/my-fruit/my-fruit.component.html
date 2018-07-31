@@ -1,0 +1,35 @@
+<div class="fruitlist">
+  <div *ngFor="let fruit of fruits" class="flipcard-container">
+
+    <div class="card-shadow front card">
+      <img class="card-img-top fruit-img" [src]="fruit.picture">
+      <div class="card-body">
+        <div class="card-maincontent">
+          <h5 class="card-title">{{fruit.name}}&nbsp;&nbsp;<p class="card-text text-muted small">${{fruit.price}} {{fruit.unit}}</p></h5>
+          <p class="card-text">{{fruit.description}}</p>
+        </div>
+        <div *ngIf="fruit.pickupUserId==null;else notBeSchedualed">
+          <button id="{{fruit._id}}front" type="button" class="btn btn-primary btn-shadow" (click)="flipCard($event);">edit</button>
+          <button type="button" name="{{fruit._id}}" class="btn btn-primary btn-shadow" (click)="deleteFruit($event);">delete</button>
+        </div>
+        <ng-template #notBeSchedualed><button type="button" class="btn btn-outline-secondary" disabled>Scheduled PickUp Already</button></ng-template>
+      </div>
+    </div>
+
+    <div class="card-shadow back card">
+      <img class="card-img-top fruit-img" [src]="fruit.picture">
+      <div class="card-body">
+          <input type="text" class="part-input" name="fruit.name" [(ngModel)]="fruit.name">
+          <input type="text" class="part-input" name="fruit.price" [(ngModel)]="fruit.price">
+          <select id="unit" class="part-input" name="fruit.unit" [(ngModel)]="fruit.unit">
+            <option>each</option>
+            <option>pound</option>
+          </select>
+          <input type="text" class="full-input" name="fruit.description" [(ngModel)]="fruit.description">
+          <button id="{{fruit._id}}" type="button" class="btn btn-primary btn-shadow" (click)="flipCardUpdate($event);">update</button>        
+          <button id="{{fruit._id}}back" type="button" class="btn btn-primary btn-shadow" (click)="flipCard($event);">Cancel</button>          
+      </div>
+    </div>
+
+  </div>
+</div>

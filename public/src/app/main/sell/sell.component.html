@@ -1,0 +1,82 @@
+<div><p class='error' *ngFor="let error of errors">{{error}}</p></div>
+<div class="myfruits">
+  <form>
+    <div class="form-row">
+      <div class="myfruitstitle form-group col-md-6">Add a fruit to sell</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="name">Fruit Name</label>
+        <input type="text" class="form-control" id="name" name="fruit.name" [(ngModel)]="fruit.name">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" id="price" name="fruit.price" [(ngModel)]="fruit.price">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="unit">Unit</label>
+        <select id="unit" class="form-control" name="fruit.unit" [(ngModel)]="fruit.unit">
+          <option>each</option>
+          <option>pound</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" rows="4" name="fruit.description" [(ngModel)]="fruit.description"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <!-- <form ref='uploadForm' id='uploadForm' action='/upload' method='post' 
+        encType="multipart/form-data">
+        <input type="file" name="fruitpicture">
+        <input type='submit' value='Upload'>
+      </form> -->
+        <label for="fruitimage">Fruit Picture</label>
+        <input type="file" class="form-control-file" id="fruitimage" (change)="getImage($event)">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="myfruitstitle form-group col-md-6">pick up location <small class="text-muted">trade place</small></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" name="fruit.address" [(ngModel)]="fruit.address">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" name="fruit.city" [(ngModel)]="fruit.city">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control" name="fruit.state" [(ngModel)]="fruit.state">
+          <option>CA</option>
+          <option>NV</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip" name="fruit.zipcode" [(ngModel)]="fruit.zipcode">
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="myfruitstitle form-group col-md-6">avalible pick up time <small class="text-muted">weekend only</small></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="From">From</label>
+        <input type="time" class="form-control" id="From" name="fruit.pickTimeFrom" [(ngModel)]="fruit.pickTimeFrom">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="To">To</label>
+        <input type="time" class="form-control" id="To" name="fruit.pickTimeTo" [(ngModel)]="fruit.pickTimeTo">
+      </div>
+    </div>    
+    <button type="submit" class="btn btn-primary" (click)="addMyFruit()">Add my fruit</button>
+  </form>
+</div>

@@ -1,0 +1,13 @@
+label{
+    font-size:14px;
+}
+.myfruits{
+    margin-left:60px;
+    margin-top:30px;
+}
+.myfruitstitle{
+    height:30px;
+    background-color:rgb(224, 234, 238);
+    font-size:17px;
+    border-radius: 5px;
+}

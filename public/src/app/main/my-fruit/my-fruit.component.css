@@ -1,0 +1,23 @@
+.full-input{
+    width:97%;
+    height:40px;
+    border-radius:5px;
+    margin:2px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding:2px;
+    padding-left:6px;
+}
+.part-input{
+    width:30%;
+    height:25px;
+    border-radius:5px;
+    display:inline-block;
+    margin:2px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding:2px;
+    padding-left:6px;
+}
+
+

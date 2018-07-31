@@ -1,0 +1,40 @@
+<div class="zipcode">
+  <input (keyup)="onKey($event)" class="form-control zipcodeinput" type="search" placeholder="ZIPCODE">
+</div>
+<div *ngIf="noSearchResult.length==0" class="fruitlist">
+
+  <div *ngFor="let fruit of fruits" class="flipcard-container">
+
+      <div class="card-shadow front card">
+        <img class="card-img-top fruit-img" [src]="fruit.picture">
+        <div class="card-body">
+          <div class="card-maincontent">
+            <h5 class="card-title">{{fruit.name}}&nbsp;&nbsp;<p class="card-text text-muted small">${{fruit.price}} {{fruit.unit}}</p></h5>
+            <p class="card-text">{{fruit.description}}</p>
+          </div>
+          <button *ngIf="fruit.pickupUserId==null;else pickupAlready" id="{{fruit._id}}front" type="button" class="btn btn-primary btn-shadow"  (click)="flipCard($event);">schedule pickup</button>
+          <ng-template #pickupAlready><button type="button" class="btn btn-outline-secondary" disabled>Already Scheduled</button></ng-template>
+        </div>
+      </div>
+  
+      <div class="card-shadow back card">
+        <img class="card-img-top fruit-img" [src]="fruit.picture">
+        <div class="card-body">
+            <p class="card-text">Location: {{fruit.address}},{{fruit.city}},{{fruit.state}},{{fruit.zipcode}}</p>
+            <p class="card-text">{{fruit.pickTimeFrom}}--{{fruit.pickTimeTo}}(weekend only)</p>
+            <button id="{{fruit._id}}" type="button" class="btn btn-primary btn-shadow" (click)="confirmPickup($event);">Confirm</button>        
+            <button id="{{fruit._id}}back" type="button" class="btn btn-primary btn-shadow" (click)="flipCard($event);">Cancel</button>
+        </div>
+      </div>
+  
+  </div>
+
+</div>
+<h3 class="noSearchResult" *ngIf="noSearchResult.length>0">{{noSearchResult}}</h3>
+
+
+
+
+
+
+

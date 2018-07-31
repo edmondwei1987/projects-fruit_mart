@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+.error{
+    color:red;
+}
+.fruit-img{
+    height:50%;
+}
+.noSearchResult{
+    text-align: center;
+    margin-top:30px;
+}
+.card-text{
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+.card-title{
+    line-height: 0.4; 
+}
+.small{
+    display:inline-block;
+}
+.card{
+    display:inline-block;
+    margin:20px;
+}
+.fruitlist{
+    padding:30px;
+}
+.card-maincontent{
+    height:65%;
+}
+.card-body{
+    height:50%;
+}
+/* These CSS is used to do flip card */
+.flipcard-container { 
+    width: 280px;
+    height: 300px;
+    position: relative;
+    perspective: 800px;
+    display:inline-block;
+    margin:20px;
+}
+.flipcard-container .card {
+    margin: 0; 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all .6s linear 0s;
+}
+.flipcard-container .front {
+    transform: rotateY(0deg);
+}
+.flipcard-container .back {
+    transform: rotateY(180deg);
+}
+.flipcard-container .front-flipped {
+    transform: rotateY(-180deg);
+}
+.flipcard-container .back-flipped {
+    transform: rotateY(0deg);
+}
+/* ------------------------------- */

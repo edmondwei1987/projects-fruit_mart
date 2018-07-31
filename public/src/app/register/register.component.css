@@ -1,0 +1,23 @@
+form{
+    text-align: center;
+}
+input{
+    width:250px;
+    text-align: center;
+}
+.form-group input{
+    margin-left:auto;
+    margin-right: auto;
+}
+button{
+    width:120px;
+}
+.registerpanel{
+    background-color:white;
+    opacity: 0.85;
+    width:300px;
+    padding:30px;
+    border-radius: 20px;
+    margin-left:auto;
+    margin-right: auto;
+}

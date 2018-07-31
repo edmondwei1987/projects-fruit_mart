@@ -1,0 +1,20 @@
+<div class="background">
+  <div class="registerpanel">
+    <form (submit)="register()">
+      <div class="form-group row">
+        <input type="text" class="form-control" id="username" placeholder="Username" [(ngModel)]="user.username" name="user.username">
+      </div>
+      <div class="form-group row">
+        <input type="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="user.email" name="user.email">
+      </div>
+      <div class="form-group row">
+        <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="user.password" name="user.password">
+      </div>
+      <div class="form-group row">
+        <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" [(ngModel)]="user.cpassword" name="user.cpassword">
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+    <div><p class='error' *ngFor="let error of errors">{{error}}</p></div>
+  </div>
+</div>
